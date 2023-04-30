@@ -4,6 +4,7 @@ import NewsCard from './NewsCard';
 
 const Home = () => {
     const allNews = useLoaderData();
+    console.log(import.meta.env.VITE_INIT);
 
     return (
         <div>
