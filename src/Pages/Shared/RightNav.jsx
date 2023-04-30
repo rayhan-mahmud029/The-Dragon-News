@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faFacebookF, faGithub, faGoogle, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const RightNav = () => {
+    const { setUser, userSignInWithGoogle } = useContext(AuthContext);
+
+    const handleGoogleSignIn = () => {
+        userSignInWithGoogle()
+            .then(result => {
+                setUser(result.user);
+            })
+            .catch(err => console.error(err))
+    }
+
     return (
         <div>
             {/* login with */}
             <div>
                 <h1 className="fs-4 fw-semibold mb-2">Login with</h1>
-                <Button variant="outline-secondary w-100 mb-2"><FontAwesomeIcon icon={faGoogle} /> Login with Google</Button>
+                <Button variant="outline-secondary w-100 mb-2"
+                    onClick={handleGoogleSignIn}
+                ><FontAwesomeIcon icon={faGoogle} /> Login with Google</Button>
                 <Button variant="outline-dark w-100"><FontAwesomeIcon icon={faGithub} /> Login with GitHub</Button>
             </div>
 
