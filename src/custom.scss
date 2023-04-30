@@ -1,0 +1,67 @@
+$danger: #403F3F;
+$secondary: #706F6F;
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-custom-secondary {
+    color: #706F6F;
+}
+
+.bg-custom-secondary {
+    background-color: #F3F3F3;
+}
+
+
+
+.social-btn {
+    width: 30px;
+    height: 30px;
+    background-color: #F3F3F3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon {
+    color: #3B599C;
+}
+
+#left-nav .active {
+    background-color: #E7E7E7;
+    border-radius: 8px;
+    color: black;
+}
+#nav-links .active{
+    color: #403F3F !important;
+    font-weight: 600;
+}
+
+.pending {
+    color: rgb(108, 117, 125);
+}
+
+.category-box a:hover {
+    color: black !important;
+}
+
+.text-details{
+
+}
+.text-see-more{
+    color: #FF8C47 !important;
+
+}
+
+
+.text-error::before{
+    content: '❌  ';
+}
+.text-error::after{
+    content: '  ❌';
+}
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
